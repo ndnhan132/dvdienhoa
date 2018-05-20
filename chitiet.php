@@ -3,7 +3,18 @@ session_start();
 ?>
 
 <?php
-	$result= $_SESSION["rs"];
+$conn= mysqli_connect("localhost", "root", "");
+if(!$conn){
+	die("kntb" . mysqli_connect_error());
+}
+mysqli_query($conn, "SET NAMES UTF8");
+		 mysqli_select_db($conn, "dienhoa");
+		 $mdh= $_REQUEST['id'];
+		 $query = "SELECT * FROM donhang where madh=" . "'$mdh'";
+		 $result= mysqli_query($conn, $query);
+
+
+	// $result= $_SESSION["rs"];
 	if(mysqli_num_rows($result)>0){
 
 	 		echo "<table style='Width=800px; background:#fff;'>";

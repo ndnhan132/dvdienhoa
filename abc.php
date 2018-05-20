@@ -1,8 +1,4 @@
 <?php
-session_start();
-?>
-
-<?php
 		$conn= mysqli_connect("localhost", "root", "");
 	 	if(!$conn){
 	 		die("kntb" . mysqli_connect_error());
@@ -31,10 +27,11 @@ session_start();
 			 		echo "</tr>";
 			    echo "</thead>";
 			   echo "<tbody>";
+$aaa="dh02";
 			      while ($row= mysqli_fetch_assoc($result)) {
 			 			# code...
 			 			echo "<tr>";
-			 			echo "<td>" . $row["madh"] . "</td>";
+			 			echo "<td>" . $abc=$row["madh"]; echo "</td>";
 			 			echo "<td>" . $row["masp"] . "</td>";
 			 			echo "<td>" . $row["nguoidat"] . "</td>";
 			 			echo "<td>" . $row["sdtnguoidat"] . "</td>";
@@ -42,10 +39,11 @@ session_start();
 			 			echo "<td>" . $row["sdtnguoinhan"] . "</td>";
 			 			echo "<td>" . $row["diachinhan"] . "</td>";
 			 			echo "<td>" . $row["thoigian"] . "</td>";
-			 			echo "<td>" . $row["dongia"] . "</td>";
-						 // echo "<td><button onclick='chiTiet($mh)'>chi tiết</button></td>";
-						 echo '<td><button onclick="chiTiet()">ZZZ</button></td>';
-			 			echo "</tr>";
+						echo "<td>" . $row["dongia"] . "</td>";
+						//  echo '<td><input type="button" onclick="chiTiet1();" value="aaa"></td>';
+						 //echo "<td><button onclick='chiTiet1($abc)'>...</button></td>"; 
+						 echo "<td>". var_dump("$abc") ."</td>";
+						echo "</tr>";
 			 		}
 
 			    echo "</tbody>";
@@ -54,39 +52,6 @@ session_start();
 				echo "NO";
 			}
 	 ?>
+	 <input type="button" onclick='chiTiet("dh02");' value="adas">
 
-	 <script type="text/javascript">
-	 	function chiTiet() {
-	 		// <?php
-	 		// $conn= mysqli_connect("localhost", "root", "");
-	 		// if(!$conn){
-	 		// 	die("kntb" . mysqli_connect_error());
-	 		// }
-	 		// mysqli_query($conn, "SET NAMES UTF8");
-		 	// mysqli_select_db($conn, "dienhoa");
-		 	// $query="SELECT * from donhang where madh='$madh'";
-	 		// $result= mysqli_query($conn, $query);
-
-	 		// $_SESSION["rs"]=$result;
-
-
-	 		// ?>
-
-
-	 		var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                    xmlhttp = new XMLHttpRequest();
-                }
-                 xmlhttp.onreadystatechange = function()
-                {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                    {
-                        document.getElementById("result").innerHTML = xmlhttp.responseText;
-                    }
-                };
-                 
-                xmlhttp.open("GET", "test.php"?param="+mh, true);
-                xmlhttp.send();
-	 	}
-	 </script>
+	 

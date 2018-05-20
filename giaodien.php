@@ -1,3 +1,6 @@
+<?php
+session_start();
+?> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +49,7 @@
 		                <div class="input-group stylish-input-group">
 		                    <input type="text" class="form-control"  placeholder="Tìm kiếm đơn hàng" >
 		                    <span class="input-group-addon">
-		                        <button type="submit">
+		                        <button type="submit" onclick="chiTiet1()">
 		                            <span class="glyphicon glyphicon-search"></span>
 		                        </button>  
 		                    </span>
@@ -64,6 +67,10 @@
 			</div>
 		</div>
 		
-	</div>	
+	</div>
+
+	  	<script src="handle/js/jquery-3.2.1.min.js"></script>
+		<script src="handle/js/bootstrap.min.js"></script>
+		<script src="handle/js/func.js"></script>
 </body>
 </html>
