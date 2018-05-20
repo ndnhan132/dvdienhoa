@@ -44,7 +44,7 @@ session_start();
 			 			echo "<td>" . $row["thoigian"] . "</td>";
 			 			echo "<td>" . $row["dongia"] . "</td>";
 						 // echo "<td><button onclick='chiTiet($mh)'>chi tiết</button></td>";
-						 echo "<td><button onclick='chiTiet()'>ZZZ</button></td>";
+						 echo '<td><button onclick="chiTiet()">ZZZ</button></td>';
 			 			echo "</tr>";
 			 		}
 
