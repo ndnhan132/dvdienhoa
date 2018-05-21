@@ -27,11 +27,10 @@
 			 		echo "</tr>";
 			    echo "</thead>";
 			   echo "<tbody>";
-$aaa="dh02";
+					$i=1;
 			      while ($row= mysqli_fetch_assoc($result)) {
-			 			# code...
 			 			echo "<tr>";
-			 			echo "<td>" . $abc=$row["madh"]; echo "</td>";
+			 			echo '<td id="js-madh-'.$i . '">' . $row["madh"] . "</td>";
 			 			echo "<td>" . $row["masp"] . "</td>";
 			 			echo "<td>" . $row["nguoidat"] . "</td>";
 			 			echo "<td>" . $row["sdtnguoidat"] . "</td>";
@@ -42,8 +41,10 @@ $aaa="dh02";
 						echo "<td>" . $row["dongia"] . "</td>";
 						//  echo '<td><input type="button" onclick="chiTiet1();" value="aaa"></td>';
 						 //echo "<td><button onclick='chiTiet1($abc)'>...</button></td>"; 
-						 echo "<td>". var_dump("$abc") ."</td>";
+						//  echo "<td>". var_dump("$abc") ."</td>";
+						echo "<td><input type='button' onclick='chiTiet($i)' value='x'></td>";
 						echo "</tr>";
+						$i++;
 			 		}
 
 			    echo "</tbody>";
@@ -51,7 +52,8 @@ $aaa="dh02";
 			}else{
 				echo "NO";
 			}
-	 ?>
-	 <input type="button" onclick='chiTiet("dh02");' value="adas">
+?>
 
-	 
+<script src="handle/js/jquery-3.2.1.min.js"></script>
+		<script src="handle/js/bootstrap.min.js"></script>
+		<script src="handle/js/func.js"></script>

@@ -1,8 +1,4 @@
 <?php
-session_start();
-?>
-
-<?php
 $conn= mysqli_connect("localhost", "root", "");
 if(!$conn){
 	die("kntb" . mysqli_connect_error());
@@ -49,6 +45,10 @@ mysqli_query($conn, "SET NAMES UTF8");
 	 		echo "</table>";
 
 	 	}else{
-	 		echo "NO";
-	 	}
+			 echo "NO";
+			 var_dump("$madh");
+		 }
+		
+
+
 ?>

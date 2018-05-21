@@ -1,3 +1,4 @@
+
 function chiTiet1(){
     var xmlhttp;
     if (window.XMLHttpRequest)
@@ -15,9 +16,11 @@ function chiTiet1(){
     xmlhttp.open("GET", "test.php", true);
     xmlhttp.send();
 }
+function chiTiet(i) {
+    var id="js-madh-"+i;
+	maDonHang =  document.getElementById(id).innerText;
+	console.log(maDonHang);
 
-
-function chiTiet(mdh) {
 	var xmlhttp;
         if (window.XMLHttpRequest)
         {
@@ -31,7 +34,6 @@ function chiTiet(mdh) {
             }
         };
 
-        xmlhttp.open("GET", "chitiet.php?id="+mdh, true);
+        xmlhttp.open("GET", "chitiet.php?id="+maDonHang, true);
         xmlhttp.send();
-    }
-    // xmlhttp.open("GET", "test.php"?param="+mh, true);
+}
